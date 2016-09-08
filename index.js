@@ -51,6 +51,12 @@ class DatePicker extends Component {
       // Other warnings you don't want like 'jsSchedulingOverhead',
     ];
   }
+  
+  componentWillReceiveProps(nextProps){
+    if(typeof nextProps.disabled === 'boolean'){
+      this.setState({disabled: nextProps.disabled})
+    }
+  }
 
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
